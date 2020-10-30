@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ZuulApiGateway
+server:
+ port: 8765
+eureka:
+ instance:
+  hostname: localhost
+ client:
+  registerWithEureka: true
+  fetchRegistry: true
+  serviceUrl:
+    defaultZone: http://localhost:8010/eureka/
+    
+zuul:
+ routes:
+  InvestementTracker: /service/**
